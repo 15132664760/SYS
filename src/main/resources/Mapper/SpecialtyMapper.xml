@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.profile.Mapper.SpecialtyMapper">
+   <insert id="addSpecialty">
+       insert into kkb_specialty(user_id,name,description)
+       values (#{userId},#{name},#{description})
+   </insert>
+    <select id="findByUserId" resultType="Specialty">
+        select *
+        from kkb_specialty
+        where user_id=#{userid};
+    </select>
+</mapper>

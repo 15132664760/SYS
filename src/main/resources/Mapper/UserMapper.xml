@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.profile.Mapper.UserMapper">
+<insert id="addUser" useGeneratedKeys="true" keyProperty="id">
+    insert into kkb_user(name,age,city,address,email,phone,weixin,qq,weibo,sex,description)
+values (#{name},#{age},#{city},#{address},#{email},#{phone},#{weixin},#{qq},#{weibo},#{sex},#{description})
+</insert>
+    <select id="findByUserId" resultType="User">
+        select *
+        from kkb_user
+        where id=#{userid};
+    </select>
+
+</mapper>

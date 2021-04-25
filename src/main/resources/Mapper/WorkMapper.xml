@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.profile.Mapper.WorkMapper">
+<insert id="addWork">
+    insert into kkb_work(userid,start,end,company,job,description)
+    values (#{userid},#{start},#{end},#{company},#{job},#{description})
+</insert>
+    <select id="findByUserId" resultType="Work">
+        select *
+        from kkb_work
+        where userid=#{userid};
+    </select>
+</mapper>

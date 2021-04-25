@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    username: root
+    password: shuai123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/profile?serverTimezone=UTC
+  thymeleaf:
+    cache: false
+    prefix: classpath:templates/
+    suffix: .html
+  mvc:
+    static-path-pattern: /**
+
+
+mybatis:
+  mapper-locations: classpath:Mapper/*.xml
+  type-aliases-package: com.example.profile.bean
+#  开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true
